@@ -50,6 +50,9 @@ def txt2csv_group(task_path, save_path):
                     key, value = line.split(':', 1)
                     d[key.lower().strip()] = value.strip()
 
+                # Idx in file does not match actual index, therefore filename is taken as idx
+                d['idx'] = file.rstrip('.txt')
+
             files.append(d)
 
         D = defaultdict(list)
